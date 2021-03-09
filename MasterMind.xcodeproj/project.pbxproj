@@ -12,6 +12,7 @@
 		EF2B48C025F7EDF400DABD3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B48BF25F7EDF400DABD3E /* Assets.xcassets */; };
 		EF2B48C325F7EDF400DABD3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B48C225F7EDF400DABD3E /* Preview Assets.xcassets */; };
 		EF2B48CC25F7EF5500DABD3E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B48CB25F7EF5500DABD3E /* ViewModel.swift */; };
+		EF2B48D125F8008A00DABD3E /* RowView_.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B48D025F8008A00DABD3E /* RowView_.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EF2B48C225F7EDF400DABD3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF2B48C425F7EDF400DABD3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF2B48CB25F7EF5500DABD3E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		EF2B48D025F8008A00DABD3E /* RowView_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView_.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				EF2B48BB25F7EDF300DABD3E /* MasterMindApp.swift */,
-				EF2B48BD25F7EDF300DABD3E /* ContentView.swift */,
 				EF2B48CB25F7EF5500DABD3E /* ViewModel.swift */,
+				EF2B48D325F8009300DABD3E /* Views */,
 				EF2B48CE25F7EF6D00DABD3E /* Modelss */,
 				EF2B48BF25F7EDF400DABD3E /* Assets.xcassets */,
 				EF2B48C425F7EDF400DABD3E /* Info.plist */,
@@ -78,6 +80,15 @@
 			children = (
 			);
 			path = Modelss;
+			sourceTree = "<group>";
+		};
+		EF2B48D325F8009300DABD3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF2B48BD25F7EDF300DABD3E /* ContentView.swift */,
+				EF2B48D025F8008A00DABD3E /* RowView_.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 				EF2B48BE25F7EDF300DABD3E /* ContentView.swift in Sources */,
 				EF2B48CC25F7EF5500DABD3E /* ViewModel.swift in Sources */,
 				EF2B48BC25F7EDF300DABD3E /* MasterMindApp.swift in Sources */,
+				EF2B48D125F8008A00DABD3E /* RowView_.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
