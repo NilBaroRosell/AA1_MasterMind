@@ -7,27 +7,28 @@
 
 import SwiftUI
 
-struct row
+/*struct row
 {
     let number: Int
     let colors: [Color]
-}
+}*/
 
 struct ContentView: View {
-    var rowList: [row] = [
-        row(number: 1, colors: [.red, .blue, .green, .red]),
-        row(number: 2, colors: [.red, .blue, .green, .red]),
-        row(number: 3, colors: [.red, .blue, .green, .red]),
-        row(number: 4, colors: [.red, .blue, .green, .red]),
-        row(number: 5, colors: [.red, .blue, .green, .red]),
-        row(number: 6, colors: [.red, .blue, .green, .red]),
-        row(number: 7, colors: [.red, .blue, .green, .red]),
-        row(number: 8, colors: [.red, .blue, .green, .red]),
-        row(number: 9, colors: [.red, .blue, .green, .red]),
-        row(number: 10, colors: [.red, .blue, .green, .red]),
-        row(number: 11, colors: [.red, .blue, .green, .red]),
-        row(number: 12, colors: [.red, .blue, .green, .red]),
-    ]
+    @ObservedObject var viewModel: ViewModel
+    /*var rowList: [row] = [
+        row(number: 1, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 2, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 3, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 4, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 5, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 6, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 7, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 8, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 9, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 10, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 11, colors: [.gray, .gray, .gray, .gray]),
+        row(number: 12, colors: [.gray, .gray, .gray, .gray]),
+    ]*/
     var body: some View {
         VStack{
             Text("MasterMind")
@@ -37,22 +38,64 @@ struct ContentView: View {
                 .background(Color.orange)
             VStack{
                 List{
-                    ForEach(rowList, id: \.number) { row in
-                        RowView(firstColor: row.colors[0],
-                                secondColor: row.colors[1],
-                                thirdColor: row.colors[2],
-                                fourthColor: row.colors[3]
+                    ForEach(viewModel.combinations, id: \.id)
+                    {
+                        combination in
+                        RowView(firstColor: combination.colors[0],
+                                secondColor: combination.colors[1],
+                                thirdColor: combination.colors[2],
+                                fourthColor: combination.colors[3]
                         )
                     }
-                }
-                HStack{
-                    Text("Tried 2 times")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.orange)
-                    Button("Start", action: doNothing)
-                        .padding()
+                    
+                    HStack{
+                        Spacer()
+                        Button("1111111") {
+                            viewModel.addColor(.blue)
+                        }
+                            .foregroundColor(.blue)
+                            .background(Color.blue)
+                        Button("222222")
+                        {
+                            //viewModel.addColor(.red)
+                        }
+                            .foregroundColor(.red)
+                            .background(Color.red)
+                        Button("333333")
+                        {
+                            //viewModel.addColor(.green)
+                        }
+                            .foregroundColor(.green)
+                            .background(Color.green)
+                        Button("444444")
+                        {
+                            //viewModel.addColor(.yellow)
+                        }
+                            .foregroundColor(.yellow)
+                            .background(Color.yellow)
+                        Button("555555")
+                        {
+                            //viewModel.addColor(.purple)
+                        }
+                            .foregroundColor(.purple)
+                            .background(Color.purple)
+                        Spacer()
+                    }
+                    HStack
+                    {
+                        Spacer()
+                        Text(viewModel.triesString)
+                            .font(.title)
+                            .foregroundColor(.orange)
+                            .padding()
+                            .background(Color.white)
+                        Spacer()
+                        Button("Restart", action: doNothing)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.orange)
+                        Spacer()
+                    }
                 }
             }
         }
@@ -66,8 +109,9 @@ extension ContentView {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    var viewModel = ViewModel()
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: ViewModel())
         
     }
 }

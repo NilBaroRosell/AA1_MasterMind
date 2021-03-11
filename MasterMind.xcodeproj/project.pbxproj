@@ -13,6 +13,7 @@
 		EF2B48C325F7EDF400DABD3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B48C225F7EDF400DABD3E /* Preview Assets.xcassets */; };
 		EF2B48CC25F7EF5500DABD3E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B48CB25F7EF5500DABD3E /* ViewModel.swift */; };
 		EF2B48D125F8008A00DABD3E /* RowView_.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B48D025F8008A00DABD3E /* RowView_.swift */; };
+		EF6CE25925FA9F5C00F4B323 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CE25825FA9F5C00F4B323 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EF2B48C425F7EDF400DABD3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF2B48CB25F7EF5500DABD3E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EF2B48D025F8008A00DABD3E /* RowView_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView_.swift; sourceTree = "<group>"; };
+		EF6CE25825FA9F5C00F4B323 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		EF2B48CE25F7EF6D00DABD3E /* Modelss */ = {
 			isa = PBXGroup;
 			children = (
+				EF6CE25825FA9F5C00F4B323 /* Model.swift */,
 			);
 			path = Modelss;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF6CE25925FA9F5C00F4B323 /* Model.swift in Sources */,
 				EF2B48BE25F7EDF300DABD3E /* ContentView.swift in Sources */,
 				EF2B48CC25F7EF5500DABD3E /* ViewModel.swift in Sources */,
 				EF2B48BC25F7EDF300DABD3E /* MasterMindApp.swift in Sources */,

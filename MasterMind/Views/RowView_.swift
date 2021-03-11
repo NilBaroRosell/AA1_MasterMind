@@ -12,12 +12,19 @@ struct  RowView: View {
     var secondColor: Color
     var thirdColor: Color
     var fourthColor: Color
+    private let firstAnswereColor: Color = .gray
+    private let secondAnswereColor: Color = .gray
+    private let thirdAnswereColor: Color = .gray
+    private let fourthAnswereColor: Color = .gray
     
     private let width: CGFloat = 35.0
     private let height: CGFloat = 35.0
+    private let width2: CGFloat = 14.0
+    private let height2: CGFloat = 14.0
     
     var body: some View{
         HStack{
+            Spacer()
             Circle()
                 .fill(firstColor)
                 .frame(width: self.width, height: self.height)
@@ -30,6 +37,26 @@ struct  RowView: View {
             Circle()
                 .fill(fourthColor)
                 .frame(width: self.width, height: self.height)
+            Spacer()
+            VStack
+            {
+                Circle()
+                    .fill(firstAnswereColor)
+                    .frame(width: self.width2, height: self.height2)
+                Circle()
+                    .fill(secondAnswereColor)
+                    .frame(width: self.width2, height: self.height2)
+            }
+            VStack
+            {
+                Circle()
+                    .fill(thirdAnswereColor)
+                    .frame(width: self.width2, height: self.height2)
+                Circle()
+                    .fill(fourthAnswereColor)
+                    .frame(width: self.width2, height: self.height2)
+            }
+            Spacer()
         }
     }
 }
