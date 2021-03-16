@@ -8,34 +8,15 @@
 import SwiftUI
 
 /*struct row
-{
-    let number: Int
-    let colors: [Color]
-}*/
+ {
+ let number: Int
+ let colors: [Color]
+ }*/
 
 struct ContentView: View {
     @ObservedObject var viewModel: ViewModel
-    /*var rowList: [row] = [
-        row(number: 1, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 2, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 3, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 4, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 5, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 6, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 7, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 8, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 9, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 10, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 11, colors: [.gray, .gray, .gray, .gray]),
-        row(number: 12, colors: [.gray, .gray, .gray, .gray]),
-    ]*/
     var body: some View {
         VStack{
-            Text("MasterMind")
-                .font(.title)
-                .foregroundColor(.white)
-                .padding()
-                .background(Color.orange)
             VStack{
                 List{
                     ForEach(viewModel.combinations, id: \.id)
@@ -44,59 +25,67 @@ struct ContentView: View {
                         RowView(firstColor: combination.colors[0],
                                 secondColor: combination.colors[1],
                                 thirdColor: combination.colors[2],
-                                fourthColor: combination.colors[3]
+                                fourthColor: combination.colors[3],
+                                firstAnswereColor: combination.colors[4],
+                                secondAnswereColor: combination.colors[6],
+                                thirdAnswereColor: combination.colors[5],
+                                fourthAnswereColor: combination.colors[7]
                         )
                     }
-                    
-                    HStack{
-                        Spacer()
-                        Button("1111111") {
-                            viewModel.addColor(.blue)
-                        }
-                            .foregroundColor(.blue)
-                            .background(Color.blue)
-                        Button("222222")
-                        {
-                            //viewModel.addColor(.red)
-                        }
-                            .foregroundColor(.red)
-                            .background(Color.red)
-                        Button("333333")
-                        {
-                            //viewModel.addColor(.green)
-                        }
-                            .foregroundColor(.green)
-                            .background(Color.green)
-                        Button("444444")
-                        {
-                            //viewModel.addColor(.yellow)
-                        }
-                            .foregroundColor(.yellow)
-                            .background(Color.yellow)
-                        Button("555555")
-                        {
-                            //viewModel.addColor(.purple)
-                        }
-                            .foregroundColor(.purple)
-                            .background(Color.purple)
-                        Spacer()
-                    }
-                    HStack
-                    {
-                        Spacer()
-                        Text(viewModel.triesString)
-                            .font(.title)
-                            .foregroundColor(.orange)
-                            .padding()
-                            .background(Color.white)
-                        Spacer()
-                        Button("Restart", action: doNothing)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.orange)
-                        Spacer()
-                    }
                 }
+                HStack{
+                    Spacer()
+                    Button("1") {
+                        viewModel.addColor(.blue)
+                    }
+                    .frame(width: 45, height: 45, alignment: .center)
+                    .foregroundColor(.blue)
+                    .background(Color.blue)
+                    .padding()
+                    Button("2")
+                    {
+                        viewModel.addColor(.red)
+                    }
+                    .frame(width: 45, height: 45, alignment: .center)
+                    .foregroundColor(.red)
+                    .background(Color.red)
+                    .padding()
+                    Button("3")
+                    {
+                        viewModel.addColor(.green)
+                    }
+                    .frame(width: 45, height: 45, alignment: .center)
+                    .foregroundColor(.green)
+                    .background(Color.green)
+                    .padding()
+                    Button("4")
+                    {
+                        viewModel.addColor(.yellow)
+                    }
+                    .frame(width: 45, height: 45, alignment: .center)
+                    .foregroundColor(.yellow)
+                    .background(Color.yellow)
+                    .padding()
+                    Button("5")
+                    {
+                        viewModel.addColor(.purple)
+                    }
+                    .frame(width: 45, height: 45, alignment: .center)
+                    .foregroundColor(.purple)
+                    .background(Color.purple)
+                    .padding()
+                    Spacer()
+                }
+                Button("Restart")
+                {
+                    viewModel.Restart()
+                }
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.orange)
+                Text(viewModel.triesString)
+                .font(.title)
+                .foregroundColor(.orange)
             }
         }
     }

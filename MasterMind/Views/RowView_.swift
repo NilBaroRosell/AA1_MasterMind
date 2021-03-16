@@ -12,10 +12,10 @@ struct  RowView: View {
     var secondColor: Color
     var thirdColor: Color
     var fourthColor: Color
-    private let firstAnswereColor: Color = .gray
-    private let secondAnswereColor: Color = .gray
-    private let thirdAnswereColor: Color = .gray
-    private let fourthAnswereColor: Color = .gray
+    var firstAnswereColor: Color = .gray
+    var secondAnswereColor: Color = .gray
+    var thirdAnswereColor: Color = .gray
+    var fourthAnswereColor: Color = .gray
     
     private let width: CGFloat = 35.0
     private let height: CGFloat = 35.0
@@ -43,18 +43,34 @@ struct  RowView: View {
                 Circle()
                     .fill(firstAnswereColor)
                     .frame(width: self.width2, height: self.height2)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
                 Circle()
                     .fill(secondAnswereColor)
                     .frame(width: self.width2, height: self.height2)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
             }
             VStack
             {
                 Circle()
                     .fill(thirdAnswereColor)
                     .frame(width: self.width2, height: self.height2)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
                 Circle()
                     .fill(fourthAnswereColor)
                     .frame(width: self.width2, height: self.height2)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
             }
             Spacer()
         }
@@ -63,7 +79,7 @@ struct  RowView: View {
 
 struct RowView_preview: PreviewProvider {
     static var previews: some View {
-        RowView(firstColor: .red, secondColor: .red, thirdColor: .red, fourthColor: .red)
+        RowView(firstColor: .red, secondColor: .red, thirdColor: .red, fourthColor: .red, firstAnswereColor: .red, secondAnswereColor: .red, thirdAnswereColor: .red, fourthAnswereColor: .red)
             
     }
 }
