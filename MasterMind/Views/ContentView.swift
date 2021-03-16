@@ -22,7 +22,7 @@ struct ContentView: View {
                     ForEach(viewModel.combinations, id: \.id)
                     {
                         combination in
-                        RowView(firstColor: combination.colors[0],
+                        RowView(id: combination.id, firstColor: combination.colors[0],
                                 secondColor: combination.colors[1],
                                 thirdColor: combination.colors[2],
                                 fourthColor: combination.colors[3],

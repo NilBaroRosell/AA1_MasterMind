@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct  RowView: View {
+    var id: Int
     var firstColor: Color
     var secondColor: Color
     var thirdColor: Color
@@ -24,6 +25,9 @@ struct  RowView: View {
     
     var body: some View{
         HStack{
+            Text(String(id))
+            .font(.title)
+            .foregroundColor(.black)
             Spacer()
             Circle()
                 .fill(firstColor)
@@ -79,7 +83,7 @@ struct  RowView: View {
 
 struct RowView_preview: PreviewProvider {
     static var previews: some View {
-        RowView(firstColor: .red, secondColor: .red, thirdColor: .red, fourthColor: .red, firstAnswereColor: .red, secondAnswereColor: .red, thirdAnswereColor: .red, fourthAnswereColor: .red)
+        RowView(id: 0, firstColor: .red, secondColor: .red, thirdColor: .red, fourthColor: .red, firstAnswereColor: .red, secondAnswereColor: .red, thirdAnswereColor: .red, fourthAnswereColor: .red)
             
     }
 }
