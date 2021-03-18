@@ -17,6 +17,9 @@ struct ContentView: View {
     @ObservedObject var viewModel: ViewModel
     var body: some View {
         VStack{
+            Text(viewModel.triesString)
+                .font(.title)
+                .foregroundColor(.orange)
             VStack{
                 List{
                     ForEach(viewModel.combinations, id: \.id)
@@ -63,6 +66,9 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .padding()
                     .background(Color.orange)
+                    /*Image(systemName: "arrow.right")
+                        .foregroundColor(.white)
+                        .background(Color.orange)*/
                     Spacer()
                     Button("Restart")
                     {
@@ -73,9 +79,8 @@ struct ContentView: View {
                     .background(Color.orange)
                     Spacer()
                 }
-                Text(viewModel.triesString)
-                    .font(.title)
-                    .foregroundColor(.orange)
+                
+                Spacer()
             }
         }
     }
