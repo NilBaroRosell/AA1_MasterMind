@@ -27,7 +27,7 @@ struct  RowView: View {
         HStack{
             Text(String(id))
             .font(.title)
-            .foregroundColor(.black)
+            .foregroundColor(.gray)
             Spacer()
             Circle()
                 .fill(firstColor)
