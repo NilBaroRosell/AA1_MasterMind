@@ -66,9 +66,6 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .padding()
                     .background(Color.orange)
-                    /*Image(systemName: "arrow.right")
-                        .foregroundColor(.white)
-                        .background(Color.orange)*/
                     Spacer()
                     Button("Restart")
                     {
