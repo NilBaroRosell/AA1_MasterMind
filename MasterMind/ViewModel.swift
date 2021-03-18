@@ -16,6 +16,7 @@ class ViewModel: ObservableObject
     var tries: Int
     var exactPlace: Int
     var wrongPlace: Int
+    var gameEnded: Bool
     
     init() {
         self.combinations = [Combination(id: 1, colors: [.gray, .gray, .gray, .gray, .gray, .gray, .gray, .gray])]
@@ -24,6 +25,7 @@ class ViewModel: ObservableObject
         solution = Combination(id: 0, colors:[.black, .black, .black, .black])
         exactPlace = 0
         wrongPlace = 0
+        gameEnded = false
         GetRandomSolution()
     }
     
@@ -31,15 +33,9 @@ class ViewModel: ObservableObject
     {
         if(self.tries <= 12)
         {
-            if self.combinations[self.tries - 1].colors[3] != .gray
-            {
-                self.combinations.append(Combination(id: self.combinations[self.tries - 1].id + 1, colors: [color, .gray, .gray, .gray, .gray, .gray, .gray, .gray ]))
-                self.tries += 1
-            }
-            else if self.combinations[self.tries - 1].colors[2] != .gray
+            if self.combinations[self.tries - 1].colors[2] != .gray
             {
                 self.combinations[self.tries - 1].colors[3] = color
-                CalculateResult()
             }
             else if self.combinations[self.tries - 1].colors[1] != .gray
             {
@@ -61,7 +57,29 @@ class ViewModel: ObservableObject
         self.combinations = [Combination(id: 1, colors: [.gray, .gray, .gray, .gray, .gray, .gray, .gray, .gray])]
         self.tries = 1
         self.triesString = "Welcome to MasterMind"
+        gameEnded = false
         GetRandomSolution()
+    }
+    
+    func EraseCombination()
+    {
+        for i in 0...7
+        {
+            self.combinations[self.tries - 1].colors[i] = .gray
+        }
+    }
+    
+    func PublishCombination()
+    {
+        if(self.combinations[self.tries - 1].colors[3] != .gray)
+        {
+            CalculateResult()
+            if(!gameEnded)
+            {
+                self.combinations.append(Combination(id: self.combinations[self.tries - 1].id + 1, colors: [.gray, .gray, .gray, .gray, .gray, .gray, .gray, .gray ]))
+                self.tries += 1
+            }
+        }
     }
     
     func CalculateResult()
@@ -113,10 +131,12 @@ class ViewModel: ObservableObject
         if exactPlace == 4
         {
             self.triesString = "Congratulations! You have won with " + String(self.tries) + " tries"
+            gameEnded = true
         }
         else if self.tries >= 12
         {
-            self.triesString = "You don't have more tries"
+            self.triesString = "You ran out of tries"
+            gameEnded = true
         }
     }
     

@@ -14,6 +14,7 @@
 		EF2B48CC25F7EF5500DABD3E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B48CB25F7EF5500DABD3E /* ViewModel.swift */; };
 		EF2B48D125F8008A00DABD3E /* RowView_.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B48D025F8008A00DABD3E /* RowView_.swift */; };
 		EF6CE25925FA9F5C00F4B323 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CE25825FA9F5C00F4B323 /* Model.swift */; };
+		EFA918192603D3EE0071A21E /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA918182603D3EE0071A21E /* ColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		EF2B48CB25F7EF5500DABD3E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EF2B48D025F8008A00DABD3E /* RowView_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView_.swift; sourceTree = "<group>"; };
 		EF6CE25825FA9F5C00F4B323 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EFA918182603D3EE0071A21E /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				EF2B48BD25F7EDF300DABD3E /* ContentView.swift */,
 				EF2B48D025F8008A00DABD3E /* RowView_.swift */,
+				EFA918182603D3EE0071A21E /* ColorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA918192603D3EE0071A21E /* ColorView.swift in Sources */,
 				EF6CE25925FA9F5C00F4B323 /* Model.swift in Sources */,
 				EF2B48BE25F7EDF300DABD3E /* ContentView.swift in Sources */,
 				EF2B48CC25F7EF5500DABD3E /* ViewModel.swift in Sources */,
@@ -297,6 +301,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MasterMind/Preview Content\"";
+				DEVELOPMENT_TEAM = 4V4P52SXM6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MasterMind/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -318,6 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MasterMind/Preview Content\"";
+				DEVELOPMENT_TEAM = 4V4P52SXM6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MasterMind/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

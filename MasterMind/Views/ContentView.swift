@@ -34,66 +34,50 @@ struct ContentView: View {
                     }
                 }
                 HStack{
+                    ColorView(viewModel: viewModel, color: .blue)
                     Spacer()
-                    Button("1") {
-                        viewModel.addColor(.blue)
-                    }
-                    .frame(width: 45, height: 45, alignment: .center)
-                    .foregroundColor(.blue)
-                    .background(Color.blue)
-                    .padding()
-                    Button("2")
-                    {
-                        viewModel.addColor(.red)
-                    }
-                    .frame(width: 45, height: 45, alignment: .center)
-                    .foregroundColor(.red)
-                    .background(Color.red)
-                    .padding()
-                    Button("3")
-                    {
-                        viewModel.addColor(.green)
-                    }
-                    .frame(width: 45, height: 45, alignment: .center)
-                    .foregroundColor(.green)
-                    .background(Color.green)
-                    .padding()
-                    Button("4")
-                    {
-                        viewModel.addColor(.yellow)
-                    }
-                    .frame(width: 45, height: 45, alignment: .center)
-                    .foregroundColor(.yellow)
-                    .background(Color.yellow)
-                    .padding()
-                    Button("5")
-                    {
-                        viewModel.addColor(.purple)
-                    }
-                    .frame(width: 45, height: 45, alignment: .center)
-                    .foregroundColor(.purple)
-                    .background(Color.purple)
-                    .padding()
+                    ColorView(viewModel: viewModel, color: .red)
                     Spacer()
+                    ColorView(viewModel: viewModel, color: .green)
+                    Spacer()
+                    ColorView(viewModel: viewModel, color: .yellow)
+                    Spacer()
+                    ColorView(viewModel: viewModel, color: .purple)
                 }
-                Button("Restart")
-                {
-                    viewModel.Restart()
-                }
-                .foregroundColor(.white)
                 .padding()
-                .background(Color.orange)
+                HStack
+                {
+                    Spacer()
+                    Button("  Erase  ")
+                    {
+                        viewModel.EraseCombination()
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.orange)
+                    Spacer()
+                    Button("Publish")
+                    {
+                        viewModel.PublishCombination()
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.orange)
+                    Spacer()
+                    Button("Restart")
+                    {
+                        viewModel.Restart()
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.orange)
+                    Spacer()
+                }
                 Text(viewModel.triesString)
-                .font(.title)
-                .foregroundColor(.orange)
+                    .font(.title)
+                    .foregroundColor(.orange)
             }
         }
-    }
-}
-extension ContentView {
-    func doNothing()
-    {
-        
     }
 }
 
